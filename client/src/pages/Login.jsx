@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className=" flex justify-center items-center h-screen w-screen">
-        <div className=" flex flex-col justify-center items-center w-2/6 p-4 bg-[#f8f8f8] rounded-md">
+        <div className=" flex flex-col justify-center items-center w-11/12 sm:w-9/12 md:w-2/6 p-4 bg-[#f8f8f8] rounded-md">
             <label className='text-3xl font-light'>Login</label>
             <form onSubmit={handleLogin} className="flex flex-col justify-center items-center space-y-3 px-4 py-4 my-3 w-10/12">
                 
@@ -41,15 +41,15 @@ const Login = () => {
                     type="email" 
                     value={email} 
                     onChange={(ev)=>setEmail(ev.target.value)}
-                    className="w-5/6 border border-spacing-2 border-b-indigo-300 p-1"/>
+                    className="w-11/12 sm:w-5/6 border border-spacing-2 border-b-indigo-300 p-1"/>
 
                 <input placeholder="Password" 
                     type="password" 
                     value={password} 
                     onChange={(ev)=>setPassword(ev.target.value)}
-                    className="w-5/6 border border-spacing-2 border-b-indigo-300 p-1"/>
+                    className="w-11/12 sm:w-5/6 border border-spacing-2 border-b-indigo-300 p-1"/>
 
-                <button type='submit' className="w-5/6 p-2 text-lg bg-[#E55604] hover:bg-[#26577C] active:bg-[#ac9689]">Login</button>
+                <button type='submit' className="w-11/12 sm:w-5/6 p-2 text-lg bg-[#E55604] hover:bg-[#26577C] active:bg-[#ac9689]">Login</button>
 
                 <span>Didn't have account? <Link to={"/register"}><strong>Register Here</strong></Link></span>
             </form>
