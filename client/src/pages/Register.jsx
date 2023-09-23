@@ -1,6 +1,5 @@
 import {useState} from "react";
-import { useNavigate
- } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 const Register = () => {
     const [userName, SetUserName]=useState("");
     const [email, setEmail]=useState("");
@@ -57,7 +56,9 @@ const Register = () => {
                         className="w-5/6 border border-spacing-2 border-b-indigo-300 p-1"/>
                     <button 
                         type="submit"
-                        className="w-5/6 p-2 text-lg bg-[#E55604] hover:bg-[#26577C] active:bg-[#E55604]">Register</button>
+                        className="w-5/6 p-2 text-lg bg-[#E55604] hover:bg-[#26577C] active:bg-[#ac9689]">Register</button>
+
+                    <span>Already have an Account? <Link to={"/login"}><strong>Login Here</strong></Link></span>
                 </form>
             </div> 
         </div>
