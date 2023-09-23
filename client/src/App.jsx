@@ -1,11 +1,19 @@
 import "./index.css";
+import { Routes, Route} from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Letter from "./pages/Letter";
 
 function App() {
 
   return (
-    <div className=' bg-red-800'>
-      This is live letter
-    </div>
+    
+      <Routes>
+        <Route path={"/"} element={<Letter />}/>
+        <Route path={"/login"} element={<Login />}/>
+        <Route path={"/register"} element={<Register />}/>
+      </Routes>
+    
   )
 }
 
