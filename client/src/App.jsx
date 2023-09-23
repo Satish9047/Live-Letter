@@ -7,13 +7,11 @@ import Letter from "./pages/Letter";
 function App() {
 
   return (
-    
       <Routes>
         <Route path={"/"} element={<Letter />}/>
         <Route path={"/login"} element={<Login />}/>
         <Route path={"/register"} element={<Register />}/>
       </Routes>
-    
   )
 }
 
