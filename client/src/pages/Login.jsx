@@ -51,7 +51,7 @@ const Login = () => {
 
                 <button type='submit' className="w-11/12 sm:w-5/6 p-2 text-lg bg-[#E55604] hover:bg-[#26577C] active:bg-[#ac9689]">Login</button>
 
-                <span>Didn't have account? <Link to={"/register"}><strong>Register Here</strong></Link></span>
+                <span>Didn&apos;t have account? <Link to={"/register"}><strong>Register Here</strong></Link></span>
             </form>
         </div>
     </div>

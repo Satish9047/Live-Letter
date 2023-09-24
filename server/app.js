@@ -3,7 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const express = require("express");
 const mongoose = require("mongoose");
-const router = require("./router/router");
+const {router} = require("./src/router/router");
 require("dotenv").config();
 
 const PORT = process.env.PORT;
