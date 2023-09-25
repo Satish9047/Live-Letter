@@ -26,8 +26,9 @@ const Register = () => {
             console.log(data);
             return navigate("/login");
         } else{
-            console.log("Something went wrong");
-            return alert("input invalid! try again");
+            const data = await res.json();
+            console.log(data.error);
+            return alert(data.error);
         }
 
     }
