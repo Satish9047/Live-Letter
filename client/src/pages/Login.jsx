@@ -18,16 +18,18 @@ const Login = () => {
             body: JSON.stringify({
                 email,
                 password
-            })
+            }),
+            credentials: 'include',
         })
 
         if(res.ok){
             const data = await res.json();
-            navigate("/letter");
-            console.log(data);
+            console.log(data.success);
+            navigate("/");
         } else{
-            console.log("something went wrong");
-            alert("invalid input")
+            const data = await res.json();
+            console.log(data.error);
+            alert(data.error);
         }
     }
 
