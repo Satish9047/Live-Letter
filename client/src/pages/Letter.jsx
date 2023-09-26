@@ -11,7 +11,7 @@ const Letter = () => {
       try {
         const res = await fetch("http://localhost:3000/authVerify", {
           method: "POST",
-          credentials: 'include',
+          credentials: "include",
         });
 
         if (res.ok) {
@@ -20,7 +20,6 @@ const Letter = () => {
         } else {
           const data = await res.json();
           console.log(data.error);
-          document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           navigate("/login");
         }
       } catch (error) {

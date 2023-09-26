@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {User} = require("../models/user.model");
-Secret=`${process.env.JWT_TOKEN}`;
+Secret=`${process.env.JWT_SECRET}`;
 
 const loginController = async (req, res)=>{
 
