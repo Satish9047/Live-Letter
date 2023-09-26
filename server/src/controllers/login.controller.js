@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {User} = require("../models/user.model");
-Secret="jwtSecret";
+Secret=`${process.env.JWT_TOKEN}`;
 
 const loginController = async (req, res)=>{
 
@@ -23,7 +23,7 @@ const loginController = async (req, res)=>{
     const jwtToken = jwt.sign({email: email}, Secret, {expiresIn: "5h"});
     console.log(jwtToken);
     return res.cookie("jwt", jwtToken, {
-        httpOnly: true,
+        httpOnly: false,
         secure: true,
         sameSite: "strict",
       }).status(200).json({ success: "You are welcome" });

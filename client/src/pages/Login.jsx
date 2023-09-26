@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
@@ -6,6 +6,17 @@ const Login = () => {
     const [password, setPassword]=useState("");
 
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        const cookies = document.cookie;
+        const jwtCookie = cookies;
+        console.log("jwtCookie:", jwtCookie);
+        if(jwtCookie){
+            console.log("navigating to the root")
+            navigate("/");
+            return console.log("cookiee is here, navigate to root")
+        }
+    }, [])
 
     const handleLogin = async (ev)=>{
         ev.preventDefault();
