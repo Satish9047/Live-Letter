@@ -11,7 +11,6 @@ const Letter = () => {
       try {
         const res = await fetch("http://localhost:3000/authVerify", {
           method: "POST",
-          credentials: "include",
         });
 
         if (res.ok) {
