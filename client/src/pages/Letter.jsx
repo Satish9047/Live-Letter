@@ -6,11 +6,13 @@ const Letter = () => {
 
   useEffect(() => {
     const authVerify = async () => {
-      console.log("sending cookie to server");
-
+      const jwtToken = localStorage.getItem("jwtToken");
       try {
         const res = await fetch("http://localhost:3000/authVerify", {
           method: "POST",
+          headers: {
+            authorization: `Bearer ${jwtToken}`
+          }
         });
 
         if (res.ok) {

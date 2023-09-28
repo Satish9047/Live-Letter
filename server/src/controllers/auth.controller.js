@@ -2,19 +2,18 @@ const jwt = require("jsonwebtoken");
 const Secret = `${process.env.JWT_SECRET}`;
 
 const authVerifyController = async (req, res) => {
-    console.log('Cookies: ', req.headers.cookie);
-    const Token = req.headers.cookie;
+    const Token = req.headers.authorization;
 
-    const cookieToken = Token.split("=")[1];
-    console.log(cookieToken);
+    const jwtToken = Token.split(" ")[1];
+    console.log(jwtToken);
 
-    if (!cookieToken) {
+    if (!jwtToken) {
         return res.status(400).json({ error: "Unauthorized user!" });
     }
 
     try {
         // Verify the JWT token
-        const authUser = await jwt.verify(cookieToken, Secret);
+        const authUser = await jwt.verify(jwtToken, Secret);
 
         if (authUser) {
             return res.status(200).json({ success: "Valid user" });
