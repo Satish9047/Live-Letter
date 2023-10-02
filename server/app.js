@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const express = require("express");
 const mongoose = require("mongoose");
+const compression = require("compression");
 const {router} = require("./src/router/router");
 require("dotenv").config();
 
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"))
 app.use(express.json());
+app.use(compression())
 app.use(express.urlencoded({extended: true}));
 
 mongoose.connect(mongoURL)
